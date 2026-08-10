@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Portfolio Assistant
 
-## Getting Started
+A production-ready frontend portfolio application built with Next.js. The application showcases my skills, projects, education, and provides an AI-powered portfolio assistant that answers questions based only on my portfolio information.
 
-First, run the development server:
+## Project Brief
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Many recruiters and visitors have limited time to explore a portfolio manually. This project provides a personal portfolio with an AI assistant that helps visitors quickly learn about my skills, projects, education, and frontend development work. I chose this idea because it combines frontend development with a practical AI capability while solving the problem of making portfolio information easier to explore.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Application
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Live URL: LIVE_URL_HERE
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Repository
 
-## Learn More
+GitHub Repository:
+https://github.com/wadhawanianchal-dotcom/frontend-portfolio
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Responsive personal portfolio website
+- About, Skills, Projects, Education, and Contact sections
+- Profile image and downloadable CV
+- Email contact button
+- AI-powered Portfolio Assistant
+- Portfolio-specific AI responses
+- Input validation
+- Loading state while AI generates a response
+- Error handling and fallback messages
+- Responsive design for desktop and mobile devices
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- Next.js
+- React
+- JavaScript
+- CSS
+- Vercel
+- Google Generative AI
+- Vercel AI SDK
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## AI Integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The AI Portfolio Assistant uses a Google Gemini model through the Vercel AI SDK.
+
+When a visitor asks a question:
+
+1. The user enters a question in the chat interface.
+2. The frontend sends the question to `/api/chat`.
+3. The server-side API route sends the question together with portfolio context to the Gemini model.
+4. The AI generates a response based only on the portfolio information provided.
+5. The response is returned and displayed in the chat interface.
+
+The assistant is instructed not to invent information. If a visitor asks for information that is not available in the portfolio, it responds with:
+
+> "I don't have that information in Anchal's portfolio yet."
+
+This helps reduce hallucinated responses and keeps answers relevant to the portfolio.
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── api/
+│   │   └── chat/
+│   │       └── route.js
+│   ├── chat/
+│   │   └── page.js
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.js
+│
+└── components/
+    └── Chat.js
+
+public/
+├── profile.png
+└── Anchal_Wadhwani_Resume.pdf
