@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Anchal Wadhwani | Portfolio",
-  description: "Frontend AI Engineering Portfolio",
+  description: "Anchal Wadhwani's Computer Science portfolio",
 };
 
 export default function RootLayout({ children }) {

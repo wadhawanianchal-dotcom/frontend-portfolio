@@ -22,7 +22,10 @@ export default function Chat() {
 
     setMessages((previous) => [
       ...previous,
-      { role: "user", content: userMessage },
+      {
+        role: "user",
+        content: userMessage,
+      },
     ]);
 
     setMessage("");
@@ -34,7 +37,9 @@ export default function Chat() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({
+          message: userMessage,
+        }),
       });
 
       const data = await response.json();

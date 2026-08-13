@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <>
@@ -5,12 +7,13 @@ export default function Home() {
       <header className="navbar">
         <div className="logo">AW</div>
 
-        <nav className="nav-links">
+        <nav className="nav-links" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
+          <a href="#achievements">Achievements</a>
           <a href="#contact">Contact</a>
           <a href="/chat">AI Assistant</a>
         </nav>
@@ -23,17 +26,22 @@ export default function Home() {
 
           <h1>Anchal Wadhwani</h1>
 
-          <h2>Frontend AI Engineering Intern</h2>
+          <h2>Computer Science Undergraduate</h2>
 
           <p className="hero-description">
-            I build responsive and modern web applications using HTML, CSS,
-            JavaScript, React, Next.js and AI-assisted development.
+            I am a Computer Science undergraduate interested in software
+            engineering and web development. I build responsive web
+            applications using HTML, CSS, JavaScript, React.js and Node.js,
+            while continuously developing my programming and problem-solving
+            skills.
           </p>
 
           <div className="hero-buttons">
             <a
               href="/Anchal_Wadhwani_Resume.pdf"
               className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download CV
             </a>
@@ -45,10 +53,16 @@ export default function Home() {
         </div>
 
         <div className="hero-image-container">
-          <img
-            src="/profile.png"
-            alt="Anchal Wadhwani"
+          <Image
             className="hero-image"
+            src="/profile-optimized.webp"
+            alt="Anchal Wadhwani"
+            width={360}
+            height={360}
+            priority
+            fetchPriority="high"
+            quality={60}
+            sizes="(max-width: 768px) 250px, 360px"
           />
         </div>
       </section>
@@ -58,29 +72,37 @@ export default function Home() {
         <h2 className="section-title">About Me</h2>
 
         <p className="section-text">
-          I am a BS Computer Science student and Frontend AI Engineering
-          Intern at FlyRank. I am interested in building modern, responsive
-          and user-friendly web applications while continuously improving my
-          frontend and AI development skills.
+          I am a Computer Science undergraduate at DHA Suffa University with
+          a strong foundation in programming, software development and
+          database systems. I have worked on academic projects using C,
+          C++, Java, Java Swing, HTML, CSS and JavaScript. I am interested
+          in software engineering and web development, and I enjoy learning
+          new technologies through practical projects.
         </p>
       </section>
 
       {/* Skills */}
       <section id="skills" className="section">
-        <h2 className="section-title">My Skills</h2>
+        <h2 className="section-title">Technical Skills</h2>
 
         <div className="skills-container">
-          <div className="skill-card">HTML5</div>
-          <div className="skill-card">CSS3</div>
-          <div className="skill-card">JavaScript</div>
-          <div className="skill-card">React</div>
-          <div className="skill-card">Next.js</div>
           <div className="skill-card">C</div>
           <div className="skill-card">C++</div>
           <div className="skill-card">Java</div>
           <div className="skill-card">SQL</div>
+          <div className="skill-card">JavaScript</div>
+          <div className="skill-card">HTML5</div>
+          <div className="skill-card">CSS3</div>
+          <div className="skill-card">React.js</div>
+          <div className="skill-card">Node.js</div>
           <div className="skill-card">MySQL</div>
-          <div className="skill-card">AI Development</div>
+          <div className="skill-card">OOP</div>
+          <div className="skill-card">Data Structures & Algorithms</div>
+          <div className="skill-card">DBMS</div>
+          <div className="skill-card">Git</div>
+          <div className="skill-card">GitHub</div>
+          <div className="skill-card">Kali Linux</div>
+          <div className="skill-card">Cisco Packet Tracer</div>
         </div>
       </section>
 
@@ -89,58 +111,14 @@ export default function Home() {
         <h2 className="section-title">My Projects</h2>
 
         <p className="section-text">
-          A selection of academic and practical projects I have developed
-          while building my programming, software development and frontend
+          A selection of academic and practical projects developed while
+          building my programming, software development and web development
           skills.
         </p>
 
         <div className="projects-container">
-
-          {/* Airline */}
           <article className="project-card">
-            <div className="project-image">
-              ✈️
-            </div>
-
-            <div className="project-content">
-              <h3>Airline Resource Allocation System</h3>
-
-              <p>
-                A Java-based project designed to manage and allocate airline
-                resources efficiently using object-oriented programming
-                concepts.
-              </p>
-
-              <span className="project-tech">
-                Java · OOP
-              </span>
-            </div>
-          </article>
-
-          {/* Hospital */}
-          <article className="project-card">
-            <div className="project-image">
-              🏥
-            </div>
-
-            <div className="project-content">
-              <h3>Hospital Management System</h3>
-
-              <p>
-                A C++ project developed using data structures and algorithms
-                to organize and manage hospital-related information
-                efficiently.
-              </p>
-
-              <span className="project-tech">
-                C++ · DSA
-              </span>
-            </div>
-          </article>
-
-          {/* Transport */}
-          <article className="project-card">
-            <div className="project-image">
+            <div className="project-image" aria-hidden="true">
               🚌
             </div>
 
@@ -148,29 +126,73 @@ export default function Home() {
               <h3>Transport System</h3>
 
               <p>
-                A C language project focused on organizing transport-related
-                information and managing basic transport system operations.
+                A console-based Transport System developed in C for managing
+                transport records and applying programming and Data Structures
+                concepts.
               </p>
 
               <span className="project-tech">
-                C Language
+                C · Data Structures
               </span>
             </div>
           </article>
 
-          {/* Ultimate Fashion */}
           <article className="project-card">
-            <div className="project-image">
+            <div className="project-image" aria-hidden="true">
+              🏥
+            </div>
+
+            <div className="project-content">
+              <h3>Hospital Management System</h3>
+
+              <p>
+                A console-based Hospital Management System developed in C++
+                to manage patient records, doctor information, appointments
+                and billing. The project applies Object-Oriented Programming
+                and Data Structures concepts.
+              </p>
+
+              <span className="project-tech">
+                C++ · OOP · Data Structures
+              </span>
+            </div>
+          </article>
+
+          <article className="project-card">
+            <div className="project-image" aria-hidden="true">
+              ✈️
+            </div>
+
+            <div className="project-content">
+              <h3>Airline Resource Allocation System</h3>
+
+              <p>
+                A desktop-based Airline Resource Allocation System developed
+                using Java Swing with separate Admin and User dashboards.
+                It includes flight management, passenger registration,
+                ticket booking, reservations, payment processing and booking
+                history.
+              </p>
+
+              <span className="project-tech">
+                Java · Java Swing · OOP
+              </span>
+            </div>
+          </article>
+
+          <article className="project-card">
+            <div className="project-image" aria-hidden="true">
               👗
             </div>
 
             <div className="project-content">
-              <h3>Ultimate Fashion E-commerce Website</h3>
+              <h3>Ultimate Fashion – E-Commerce Website</h3>
 
               <p>
-                A responsive fashion e-commerce website built with HTML,
-                CSS and JavaScript to create an engaging online shopping
-                experience.
+                A responsive fashion e-commerce website featuring product
+                listings, category navigation and interactive user interfaces.
+                Developed using HTML, CSS and JavaScript with a focus on
+                responsive design and usability.
               </p>
 
               <span className="project-tech">
@@ -178,7 +200,6 @@ export default function Home() {
               </span>
             </div>
           </article>
-
         </div>
       </section>
 
@@ -187,9 +208,128 @@ export default function Home() {
         <h2 className="section-title">Education</h2>
 
         <div className="education-card">
-          <h3>BS Computer Science</h3>
-          <p>DHA Suffa University</p>
-          <p>Expected Graduation: 2028</p>
+          <div className="education-header">
+            <div className="education-icon" aria-hidden="true">
+              🎓
+            </div>
+
+            <div>
+              <h3>Bachelor of Science in Computer Science</h3>
+
+              <p className="education-university">
+                DHA Suffa University
+              </p>
+
+              <p className="education-location">
+                Karachi, Pakistan
+              </p>
+            </div>
+          </div>
+
+          <div className="education-status">
+            <div>
+              <span className="education-label">
+                Academic Progress
+              </span>
+
+              <strong>Completed 4th Semester</strong>
+            </div>
+
+            <div>
+              <span className="education-label">
+                Expected Graduation
+              </span>
+
+              <strong>2028</strong>
+            </div>
+          </div>
+
+          <div className="coursework">
+            <h4>Relevant Coursework</h4>
+
+            <div className="coursework-list">
+              <span>Object-Oriented Programming</span>
+              <span>Data Structures & Algorithms</span>
+              <span>Database Systems</span>
+              <span>Operating Systems</span>
+              <span>Information Security</span>
+              <span>Computer Organization & Assembly</span>
+              <span>Digital Logic Design</span>
+              <span>Calculus</span>
+              <span>Linear Algebra</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements */}
+      <section id="achievements" className="section">
+        <h2 className="section-title">
+          Achievements & Activities
+        </h2>
+
+        <div className="achievements-container">
+          <article className="achievement-card">
+            <div className="achievement-icon" aria-hidden="true">
+              🤖
+            </div>
+
+            <div>
+              <h3>
+                Retrieval-Augmented Generation (RAG) Workshop
+              </h3>
+
+              <p className="achievement-organization">
+                GDG On Campus, DHA Suffa University · 2026
+              </p>
+
+              <p>
+                Learned the fundamentals of AI-powered information
+                retrieval, vector embeddings and Large Language Models
+                (LLMs).
+              </p>
+            </div>
+          </article>
+
+          <article className="achievement-card">
+            <div className="achievement-icon" aria-hidden="true">
+              🎨
+            </div>
+
+            <div>
+              <h3>Stranger Designs: UI/UX Event</h3>
+
+              <p className="achievement-organization">
+                Microsoft Learn Student Community, DSU · 2026
+              </p>
+
+              <p>
+                Gained practical knowledge of user-centered design,
+                wireframing, prototyping, accessibility and usability
+                principles.
+              </p>
+            </div>
+          </article>
+
+          <article className="achievement-card">
+            <div className="achievement-icon" aria-hidden="true">
+              💻
+            </div>
+
+            <div>
+              <h3>HASHCODE Coding Competition</h3>
+
+              <p className="achievement-organization">
+                GDG On Campus, DHA Suffa University · 2025
+              </p>
+
+              <p>
+                Participated in algorithmic and logical programming
+                challenges, strengthening problem-solving and analytical
+                thinking skills.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -198,14 +338,12 @@ export default function Home() {
         <h2 className="section-title">Let's Connect</h2>
 
         <p className="section-text">
-          Feel free to contact me for opportunities, collaborations or
-          frontend development projects.
+          Feel free to contact me for internship opportunities,
+          collaborations or software and web development projects.
         </p>
 
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=wadhawanianchal@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:wadhawanianchal@gmail.com"
           className="btn-primary"
         >
           Email Me
