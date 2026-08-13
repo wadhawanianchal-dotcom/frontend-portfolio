@@ -8,7 +8,7 @@ Many recruiters and visitors have limited time to explore a portfolio manually. 
 
 ## Live Application
 
-Live URL: LIVE_URL_HERE
+Live URL: Live URL: https://frontend-portfolio-two-rose.vercel.app/
 
 ## Repository
 
