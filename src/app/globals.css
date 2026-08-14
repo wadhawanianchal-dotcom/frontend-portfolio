@@ -1,3 +1,7 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +10,21 @@
 
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background: #0b1120;
   color: #e8edf5;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
   overflow-x: hidden;
 }
 
@@ -19,20 +32,25 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* =========================
+
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
 
 .navbar {
   width: 100%;
-  height: 76px;
+  min-height: 76px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 6%;
+
   position: sticky;
   top: 0;
   z-index: 1000;
+
   background: #0b1120;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -53,26 +71,34 @@ a {
 .nav-links a {
   color: #cbd5e1;
   text-decoration: none;
+
   font-size: 16px;
   font-weight: 600;
-  transition: color 0.2s ease;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .nav-links a:hover {
   color: #5fc7ff;
 }
 
-/* =========================
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   min-height: calc(100vh - 76px);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+
   gap: 45px;
   padding: 65px 6%;
+
   background: #0b1120;
 }
 
@@ -88,31 +114,40 @@ a {
 }
 
 .hero h1 {
+  color: #f8fafc;
+
   font-size: clamp(48px, 5vw, 72px);
   line-height: 1.05;
+
   margin-bottom: 18px;
-  color: #f8fafc;
+
   letter-spacing: -2px;
 }
 
 .hero h2 {
   color: #94a3b8;
+
   font-size: clamp(27px, 3vw, 40px);
   line-height: 1.2;
+
   margin-bottom: 25px;
 }
 
 .hero-description {
+  max-width: 620px;
+
   color: #cbd5e1;
+
   font-size: 18px;
   line-height: 1.75;
-  max-width: 620px;
+
   margin-bottom: 32px;
 }
 
-/* =========================
+
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .hero-buttons {
   display: flex;
@@ -123,10 +158,17 @@ a {
 .btn-primary,
 .btn-secondary {
   display: inline-block;
+
   padding: 14px 30px;
+
   border-radius: 30px;
+
   text-decoration: none;
+
   font-weight: 700;
+
+  cursor: pointer;
+
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -135,70 +177,103 @@ a {
 
 .btn-primary {
   background: linear-gradient(135deg, #4dbff5, #2588e8);
+
   color: white;
-  box-shadow: 0 8px 25px rgba(77, 191, 245, 0.18);
+
+  box-shadow:
+    0 8px 25px rgba(77, 191, 245, 0.18);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(77, 191, 245, 0.3);
+
+  box-shadow:
+    0 12px 30px rgba(77, 191, 245, 0.3);
 }
 
 .btn-secondary {
   color: #f1f5f9;
+
   border: 1px solid rgba(95, 199, 255, 0.6);
+
   background: transparent;
 }
 
 .btn-secondary:hover {
   background: #2588e8;
   border-color: #2588e8;
+
   color: white;
+
   transform: translateY(-3px);
 }
 
-/* =========================
+
+/* =========================================================
    PROFILE IMAGE
-========================= */
+========================================================= */
 
 .hero-image-container {
-  width: min(500px, 100%);
+  width: min(380px, 80vw);
+  height: min(380px, 80vw);
+
   aspect-ratio: 1 / 1;
+
   justify-self: center;
+
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 }
 
 .hero-image-container::before {
   content: "";
+
   position: absolute;
-  inset: 25px;
+
+  inset: -12px;
+
   border-radius: 50%;
-  border: 1px solid rgba(95, 199, 255, 0.18);
-  box-shadow: 0 0 35px rgba(77, 191, 245, 0.12);
+
+  border: 1px solid rgba(95, 199, 255, 0.35);
+
+  box-shadow:
+    0 0 25px rgba(77, 191, 245, 0.2);
+
   pointer-events: none;
 }
 
 .hero-image {
-  width: min(420px, 90%);
-  height: min(420px, 90%);
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
   object-position: center;
+
   border-radius: 50%;
-  border: 5px solid #4dbff5;
-  box-shadow: 0 0 30px rgba(77, 191, 245, 0.35);
+
+  border: 4px solid #4dbff5;
+
+  box-shadow:
+    0 0 30px rgba(77, 191, 245, 0.3);
+
   display: block;
 }
 
-/* =========================
+
+/* =========================================================
    GENERAL SECTIONS
-========================= */
+========================================================= */
 
 .section {
   padding: 90px 6%;
+
   background: #111a2e;
+
   scroll-margin-top: 76px;
 }
 
@@ -208,40 +283,58 @@ a {
 
 .section-title {
   text-align: center;
+
   color: #5fc7ff;
+
   font-size: clamp(32px, 4vw, 44px);
+
   margin-bottom: 18px;
 }
 
 .section-text {
   max-width: 850px;
+
   margin: 0 auto;
+
   text-align: center;
+
   color: #cbd5e1;
+
   font-size: 18px;
   line-height: 1.8;
 }
 
-/* =========================
+
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
 
 .skills-container {
   max-width: 1000px;
+
   margin: 45px auto 0;
+
   display: flex;
   flex-wrap: wrap;
+
   justify-content: center;
+
   gap: 15px;
 }
 
 .skill-card {
   background: rgba(38, 52, 75, 0.7);
+
   color: #e8edf5;
+
   padding: 15px 24px;
+
   border-radius: 12px;
+
   border: 1px solid rgba(77, 191, 245, 0.2);
+
   font-weight: 600;
+
   transition:
     transform 0.2s ease,
     border-color 0.2s ease;
@@ -249,26 +342,36 @@ a {
 
 .skill-card:hover {
   transform: translateY(-4px);
+
   border-color: #4dbff5;
 }
 
-/* =========================
+
+/* =========================================================
    PROJECTS
-========================= */
+========================================================= */
 
 .projects-container {
   max-width: 1200px;
+
   margin: 50px auto 0;
+
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 30px;
 }
 
 .project-card {
   overflow: hidden;
+
   background: #162238;
+
   border-radius: 20px;
+
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   transition:
     transform 0.25s ease,
     border-color 0.25s ease;
@@ -276,20 +379,25 @@ a {
 
 .project-card:hover {
   transform: translateY(-7px);
+
   border-color: rgba(77, 191, 245, 0.5);
 }
 
 .project-image {
   height: 170px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 65px;
-  background: linear-gradient(
-    135deg,
-    rgba(77, 191, 245, 0.12),
-    rgba(96, 60, 255, 0.08)
-  );
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(77, 191, 245, 0.12),
+      rgba(96, 60, 255, 0.08)
+    );
 }
 
 .project-content {
@@ -298,70 +406,100 @@ a {
 
 .project-content h3 {
   color: #5fc7ff;
+
   font-size: 23px;
+
   margin-bottom: 14px;
 }
 
 .project-content p {
   color: #c7d0dc;
+
   line-height: 1.75;
 }
 
 .project-tech {
   display: inline-block;
+
   margin-top: 20px;
+
   padding: 7px 14px;
+
   border-radius: 20px;
+
   background: rgba(77, 191, 245, 0.1);
+
   border: 1px solid rgba(77, 191, 245, 0.3);
+
   color: #5fc7ff;
+
   font-size: 13px;
+
   font-weight: 600;
 }
 
-/* =========================
+
+/* =========================================================
    EDUCATION
-========================= */
+========================================================= */
 
 .education-card {
   max-width: 950px;
+
   margin: 45px auto 0;
+
   padding: 40px;
+
   background: #162238;
+
   border-radius: 22px;
+
   border: 1px solid rgba(77, 191, 245, 0.2);
 }
 
 .education-header {
   display: flex;
   align-items: center;
+
   gap: 22px;
 }
 
 .education-icon {
   width: 70px;
   height: 70px;
+
   flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 18px;
+
   background: rgba(77, 191, 245, 0.1);
+
   border: 1px solid rgba(77, 191, 245, 0.25);
+
   font-size: 34px;
 }
 
 .education-card h3 {
   color: #5fc7ff;
+
   font-size: 28px;
+
   line-height: 1.3;
+
   margin-bottom: 8px;
 }
 
 .education-university {
   color: #f8fafc !important;
+
   font-size: 20px;
+
   font-weight: 700;
+
   margin-bottom: 4px !important;
 }
 
@@ -371,123 +509,175 @@ a {
 
 .education-card p {
   color: #cbd2dc;
+
   margin: 5px 0;
+
   line-height: 1.6;
 }
 
 .education-status {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 18px;
+
   margin-top: 32px;
 }
 
 .education-status > div {
   padding: 20px;
+
   border-radius: 15px;
+
   background: rgba(77, 191, 245, 0.06);
+
   border: 1px solid rgba(77, 191, 245, 0.12);
 }
 
 .education-label {
   display: block;
+
   color: #94a3b8;
+
   font-size: 13px;
+
   font-weight: 600;
+
   margin-bottom: 7px;
+
   text-transform: uppercase;
+
   letter-spacing: 0.5px;
 }
 
 .education-status strong {
   color: #f8fafc;
+
   font-size: 18px;
 }
 
 .coursework {
   margin-top: 30px;
+
   padding-top: 25px;
+
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .coursework h4 {
   color: #f1f5f9;
+
   font-size: 19px;
+
   margin-bottom: 18px;
 }
 
 .coursework-list {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 10px;
 }
 
 .coursework-list span {
   padding: 9px 14px;
+
   border-radius: 20px;
+
   background: rgba(77, 191, 245, 0.08);
+
   border: 1px solid rgba(77, 191, 245, 0.2);
+
   color: #cbd5e1;
+
   font-size: 14px;
 }
 
-/* =========================
+
+/* =========================================================
    ACHIEVEMENTS
-========================= */
+========================================================= */
 
 .achievements-container {
   max-width: 1000px;
+
   margin: 45px auto 0;
+
   display: grid;
+
   grid-template-columns: 1fr;
+
   gap: 20px;
 }
 
 .achievement-card {
   display: flex;
+
   align-items: flex-start;
+
   gap: 20px;
+
   padding: 28px;
+
   background: #162238;
+
   border-radius: 18px;
+
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .achievement-icon {
   min-width: 58px;
+
   width: 58px;
   height: 58px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   border-radius: 15px;
+
   background: rgba(77, 191, 245, 0.1);
+
   border: 1px solid rgba(77, 191, 245, 0.2);
+
   font-size: 27px;
 }
 
 .achievement-card h3 {
   color: #5fc7ff;
+
   font-size: 21px;
+
   line-height: 1.4;
+
   margin-bottom: 7px;
 }
 
 .achievement-organization {
   color: #94a3b8 !important;
+
   font-size: 14px;
+
   font-weight: 600;
+
   margin-bottom: 10px !important;
 }
 
 .achievement-card p {
   color: #cbd5e1;
+
   line-height: 1.7;
 }
 
-/* =========================
+
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
 .contact-section {
   text-align: center;
@@ -497,102 +687,168 @@ a {
   margin-top: 30px;
 }
 
-/* =========================
-   AI CHAT PAGE
-========================= */
+
+/* =========================================================
+   AI PORTFOLIO ASSISTANT
+========================================================= */
 
 .chat-page {
   min-height: 100vh;
-  background: #0b1120;
-  color: #e8edf5;
+
   padding: 50px 20px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(77, 191, 245, 0.08),
+      transparent 40%
+    ),
+    #0b1120;
+
+  color: #e8edf5;
 }
 
 .chat-container {
   width: min(900px, 100%);
+
   height: 700px;
+
   display: flex;
+
   flex-direction: column;
+
   overflow: hidden;
+
   background: #111a2e;
-  border: 1px solid rgba(77, 191, 245, 0.22);
+
+  border: 1px solid rgba(77, 191, 245, 0.25);
+
   border-radius: 24px;
+
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.35),
-    0 0 35px rgba(77, 191, 245, 0.08);
+    0 0 40px rgba(77, 191, 245, 0.08);
 }
+
+
+/* Chat Header */
 
 .chat-header {
   display: flex;
+
   align-items: center;
+
   gap: 18px;
+
   padding: 25px 30px;
+
   background: #162238;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .chat-icon {
   width: 58px;
   height: 58px;
+
   flex-shrink: 0;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   border-radius: 16px;
+
   background: rgba(77, 191, 245, 0.12);
+
   border: 1px solid rgba(77, 191, 245, 0.25);
+
   font-size: 28px;
 }
 
 .chat-header h1 {
   margin: 0 0 5px;
+
   color: #5fc7ff;
+
   font-size: 25px;
+
   line-height: 1.3;
 }
 
 .chat-header p {
   margin: 0;
+
   color: #94a3b8;
+
   font-size: 15px;
 }
 
+
+/* Chat Messages */
+
 .chat-messages {
   flex: 1;
+
   overflow-y: auto;
+
   padding: 30px;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 18px;
+
   background: #0f1729;
 }
 
 .message {
   max-width: 75%;
+
   padding: 17px 20px;
+
   border-radius: 17px;
+
   line-height: 1.6;
+
+  word-wrap: break-word;
 }
 
 .message strong {
   display: block;
+
   margin-bottom: 6px;
+
   font-size: 14px;
 }
 
 .message p {
   margin: 0;
+
   font-size: 15px;
+
+  white-space: pre-line;
 }
+
+
+/* Assistant */
 
 .assistant-message {
   align-self: flex-start;
+
   background: #162238;
+
   border: 1px solid rgba(77, 191, 245, 0.16);
+
   color: #cbd5e1;
+
   border-bottom-left-radius: 5px;
 }
 
@@ -600,36 +856,65 @@ a {
   color: #5fc7ff;
 }
 
+
+/* User */
+
 .user-message {
   align-self: flex-end;
-  background: linear-gradient(135deg, #2588e8, #4dbff5);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2588e8,
+      #4dbff5
+    );
+
   color: white;
+
   border-bottom-right-radius: 5px;
-  box-shadow: 0 6px 20px rgba(37, 136, 232, 0.18);
+
+  box-shadow:
+    0 6px 20px rgba(37, 136, 232, 0.18);
 }
 
 .user-message strong {
   color: white;
 }
 
+
+/* Chat Input */
+
 .chat-input-area {
   display: flex;
+
   gap: 12px;
+
   padding: 20px;
+
   background: #162238;
+
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .chat-input-area input {
   flex: 1;
+
   min-width: 0;
+
   padding: 15px 18px;
+
   border-radius: 14px;
+
   border: 1px solid rgba(77, 191, 245, 0.2);
+
   outline: none;
+
   background: #0f1729;
+
   color: #e8edf5;
+
   font-size: 15px;
+
   font-family: inherit;
 }
 
@@ -639,28 +924,54 @@ a {
 
 .chat-input-area input:focus {
   border-color: #4dbff5;
-  box-shadow: 0 0 0 3px rgba(77, 191, 245, 0.08);
+
+  box-shadow:
+    0 0 0 3px rgba(77, 191, 245, 0.08);
 }
 
 .chat-input-area button {
   padding: 0 25px;
+
   border: none;
+
   border-radius: 14px;
-  background: linear-gradient(135deg, #4dbff5, #2588e8);
+
+  background:
+    linear-gradient(
+      135deg,
+      #4dbff5,
+      #2588e8
+    );
+
   color: white;
+
   font-size: 15px;
+
   font-weight: 700;
+
   cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .chat-input-area button:hover:not(:disabled) {
   transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 136, 232, 0.25);
 }
 
 .chat-input-area button:disabled {
   opacity: 0.6;
+
   cursor: not-allowed;
 }
+
+
+/* Chat Scrollbar */
 
 .chat-messages::-webkit-scrollbar {
   width: 7px;
@@ -672,12 +983,18 @@ a {
 
 .chat-messages::-webkit-scrollbar-thumb {
   background: #26344b;
+
   border-radius: 10px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #334766;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
 
 @media (max-width: 1100px) {
   .navbar {
@@ -705,19 +1022,23 @@ a {
   }
 }
 
-@media (max-width: 900px) {
-  .navbar {
-    padding: 0 30px;
-  }
 
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+
     text-align: center;
+
     padding: 70px 30px;
   }
 
   .hero-text {
     max-width: 700px;
+
     margin: 0 auto;
   }
 
@@ -732,22 +1053,39 @@ a {
 
   .hero-image-container {
     order: -1;
-    width: min(420px, 90vw);
+
+    width: min(300px, 75vw);
+    height: min(300px, 75vw);
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
 
 @media (max-width: 768px) {
   .navbar {
     height: auto;
+
     min-height: 76px;
+
     padding: 18px 20px;
+
     flex-direction: column;
+
     gap: 15px;
   }
 
   .nav-links {
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 12px 18px;
   }
 
@@ -757,6 +1095,7 @@ a {
 
   .hero {
     min-height: auto;
+
     padding: 65px 25px 80px;
   }
 
@@ -773,21 +1112,17 @@ a {
   }
 
   .hero-image-container {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
 
   .hero-image {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
 
   .section {
     padding: 75px 25px;
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr;
   }
 
   .education-card {
@@ -812,13 +1147,16 @@ a {
 
   .achievement-card {
     padding: 22px 18px;
+
     gap: 15px;
   }
 
   .achievement-icon {
     min-width: 48px;
+
     width: 48px;
     height: 48px;
+
     font-size: 22px;
   }
 
@@ -830,23 +1168,35 @@ a {
     font-size: 14px;
   }
 
+
+  /* -------------------------
+     CHAT MOBILE
+  ------------------------- */
+
   .chat-page {
-    padding: 20px 12px;
+    min-height: 100vh;
+
+    padding: 15px 10px;
+
     align-items: stretch;
   }
 
   .chat-container {
-    height: calc(100vh - 40px);
+    width: 100%;
+
+    height: calc(100vh - 30px);
+
     border-radius: 18px;
   }
 
   .chat-header {
-    padding: 20px;
+    padding: 18px;
   }
 
   .chat-icon {
     width: 50px;
     height: 50px;
+
     font-size: 24px;
   }
 
@@ -860,25 +1210,100 @@ a {
 
   .chat-messages {
     padding: 20px 15px;
+
+    gap: 14px;
   }
 
   .message {
     max-width: 88%;
+
     padding: 14px 16px;
+  }
+
+  .message p {
+    font-size: 14px;
   }
 
   .chat-input-area {
     padding: 14px;
+
+    gap: 8px;
   }
 
   .chat-input-area input {
     padding: 13px 14px;
+
+    font-size: 14px;
   }
 
   .chat-input-area button {
     padding: 0 18px;
   }
 }
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+
+    letter-spacing: -1px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero-image-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .chat-header {
+    gap: 12px;
+  }
+
+  .chat-header h1 {
+    font-size: 18px;
+  }
+
+  .chat-header p {
+    font-size: 12px;
+  }
+
+  .chat-input-area input {
+    min-width: 0;
+  }
+
+  .chat-input-area button {
+    padding: 0 14px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {

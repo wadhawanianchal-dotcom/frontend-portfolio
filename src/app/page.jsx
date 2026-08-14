@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      {/* Navbar */}
+      {/* NAVBAR */}
       <header className="navbar">
         <div className="logo">AW</div>
 
@@ -19,7 +19,7 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero */}
+      {/* HERO */}
       <section id="home" className="hero">
         <div className="hero-text">
           <p className="hello">Hello, I'm</p>
@@ -60,14 +60,13 @@ export default function Home() {
             width={360}
             height={360}
             priority
-            fetchPriority="high"
-            quality={60}
+            quality={75}
             sizes="(max-width: 768px) 250px, 360px"
           />
         </div>
       </section>
 
-      {/* About */}
+      {/* ABOUT */}
       <section id="about" className="section">
         <h2 className="section-title">About Me</h2>
 
@@ -81,7 +80,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Skills */}
+      {/* SKILLS */}
       <section id="skills" className="section">
         <h2 className="section-title">Technical Skills</h2>
 
@@ -106,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* PROJECTS */}
       <section id="projects" className="section">
         <h2 className="section-title">My Projects</h2>
 
@@ -203,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education */}
+      {/* EDUCATION */}
       <section id="education" className="section">
         <h2 className="section-title">Education</h2>
 
@@ -262,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Achievements */}
+      {/* ACHIEVEMENTS */}
       <section id="achievements" className="section">
         <h2 className="section-title">
           Achievements & Activities
@@ -333,7 +332,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* CONTACT */}
       <section id="contact" className="section contact-section">
         <h2 className="section-title">Let's Connect</h2>
 
@@ -343,8 +342,10 @@ export default function Home() {
         </p>
 
         <a
-          href="mailto:wadhawanianchal@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=wadhawanianchal@gmail.com"
           className="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Email Me
         </a>
