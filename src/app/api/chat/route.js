@@ -32,16 +32,28 @@ export async function POST(request) {
     const body = await request.json();
     const message = body.message?.trim();
 
+    // Reject empty messages
     if (!message) {
       return Response.json(
         { error: "Please enter a question." },
         { status: 400 }
       );
     }
-const { text } = await generateText({
-  model: google("gemini-flash-latest"),
-  prompt: `${portfolioContext}
 
+    // Protect the AI route from excessively large requests
+    if (message.length > 500) {
+      return Response.json(
+        {
+          error:
+            "Question is too long. Please keep it under 500 characters.",
+        },
+        { status: 400 }
+      );
+    }
+
+    const { text } = await generateText({
+      model: google("gemini-flash-latest"),
+      prompt: `${portfolioContext}
 
 Visitor question: ${message}`,
     });
