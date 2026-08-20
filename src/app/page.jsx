@@ -55,7 +55,7 @@ export default function Home() {
         <div className="hero-image-container">
           <Image
             className="hero-image"
-            src="/profile-optimized.webp"
+            src="/image.jpeg"
             alt="Anchal Wadhwani"
             width={360}
             height={360}
